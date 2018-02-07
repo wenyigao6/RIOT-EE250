@@ -88,6 +88,8 @@ int adc_sample(adc_t line, adc_res_t res)
 
     /* Poll/wait until end of conversion */
     // gpio_init(PIN2, GPIO_OUT);
+    gpio_clear(GPIO_PIN(PORT_D,2));
+
     gpio_set(GPIO_PIN(PORT_D,2));
 
     while ((adca->cc2538_adc_adccon1.ADCCON1 &
